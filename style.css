@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap');
+
+:root{
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --second-hand-color:#E83A27;
+}
+html.dark{
+  --primary-color: #fff;
+  --secondary-color: #333;
+  --second-hand-color:#FF7B69;
+}
+html{
+  transition:  all 0.5s ease;
+}
+
+html.dark{
+  background-color: #111;
+  color: var(--primary-color);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+
+body{
+  margin: 0;
+  font-family: 'Heebo',sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.toggle{
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 100px;
+}
+.toggle:focus{
+  outline: 0;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.clock{
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.needle{
+  position: absolute;
+  background-color: var(--primary-color);
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 65px;
+  border-radius: 50% 50% 0 0;
+  transform-origin: bottom center;
+  transition: all .98s linear;
+}
+.needle.hour{
+  transform: translate(-50%, -100%) rotate(0deg);
+
+}
+
+.needle.min{
+  transform: translate(-50%, -100%) rotate(10deg);
+  height: 100px;
+}
+.needle.sec{
+  transform: translate(-50%, -100%) rotate(45deg);
+  height: 100px;
+  background-color: var(--second-hand-color) ;
+}
+
+.center{
+  background-color:var(--second-hand-color);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+}
+
+.center::after{
+  content: "";
+  background-color:var(--primary-color);
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+}
+.time{
+  font-size: 60px;
+}
+.date{
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: .3px;
+  line-height: 2px;
+  text-transform: uppercase;
+}
+
+
+
